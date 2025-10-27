@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priority-Based Task Scheduler</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Priority-Based Task Scheduler</h1>
+
+    <div class="input-area">
+      <input type="text" id="taskName" placeholder="Enter task name">
+      <input type="number" id="taskPriority" placeholder="Enter priority (1-10)">
+      <button onclick="addTask()">Add Task</button>
+      <button class="schedule-btn" onclick="scheduleTasks()">Schedule</button>
+    </div>
+
+    <h3>📝 Task List</h3>
+    <ul id="taskList"></ul>
+
+    <h3>✅ Scheduled Tasks</h3>
+    <ul id="scheduledList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
