@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priority-Based Task Scheduler</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Greedy Priority-Based Job Scheduler</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>⚡ Priority-Based Task Scheduler</h1>
+    <h1>⚙️ Greedy Priority-Based Job Scheduler</h1>
+    <p class="desc">Add tasks with priority and cost. Tasks are scheduled using Greedy + Priority Queue approach.</p>
 
-    <div class="input-area">
+    <div class="form-section">
       <input type="text" id="taskName" placeholder="Enter task name">
-      <input type="number" id="taskPriority" placeholder="Enter priority (1-10)">
-      <button onclick="addTask()">Add Task</button>
-      <button class="schedule-btn" onclick="scheduleTasks()">Schedule</button>
+      <input type="number" id="priority" placeholder="Priority">
+      <input type="number" id="cost" placeholder="Cost">
+      <button id="addTask">Add Task</button>
+      <button id="schedule">Schedule Tasks</button>
+      <button id="showChart">Show Chart</button>
     </div>
 
-    <h3>📝 Task List</h3>
-    <ul id="taskList"></ul>
+    <div class="tasks">
+      <h2>📝 Added Tasks</h2>
+      <ul id="taskList"></ul>
+    </div>
 
-    <h3>✅ Scheduled Tasks</h3>
-    <ul id="scheduledList"></ul>
+    <div class="schedule">
+      <h2>📅 Scheduled Order</h2>
+      <ul id="scheduleList"></ul>
+    </div>
+
+    <!-- ✅ Proper centered chart container -->
+    <div id="chartContainer" style="display: none;">
+      <div class="chart-box">
+        <canvas id="taskChart"></canvas>
+      </div>
+    </div>
+
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
