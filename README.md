@@ -25,7 +25,7 @@ In today’s fast-paced digital world, efficient task scheduling plays a vital r
 - Implement visual animations or drag-and-drop for task ordering.  
 - Expand to include more scheduling criteria (e.g., arrival time, deadline).
 ## Author  
-Pakkiru Damini (B.Tech AI & Data Science, 2nd Year)  
+Pakkiru Damini (B.Tech AI & Data Science, 3rd Year)  
 GitHub: [DAMINI11-blip](https://github.com/DAMINI11-blip)  
 
 ## License  
