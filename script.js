@@ -24,11 +24,31 @@ function clearInputs() {
 function displayTasks() {
   const taskList = document.getElementById("taskList");
   taskList.innerHTML = "";
-  tasks.forEach(t => {
+  tasks.forEach((t, index) => {
     const li = document.createElement("li");
-    li.textContent = `${t.name} | Priority: ${t.priority} | Cost: ${t.cost}`;
+    li.innerHTML = `
+      ${t.name} | Priority: ${t.priority} | Cost: ${t.cost}
+      <button class="edit-btn" onclick="editTask(${index})">✏️</button>
+      <button class="delete-btn" onclick="deleteTask(${index})">🗑️</button>
+    `;
     taskList.appendChild(li);
   });
+}
+
+function editTask(index) {
+  const task = tasks[index];
+  document.getElementById("taskName").value = task.name;
+  document.getElementById("priority").value = task.priority;
+  document.getElementById("cost").value = task.cost;
+
+  // Remove the task temporarily
+  tasks.splice(index, 1);
+  displayTasks();
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  displayTasks();
 }
 
 document.getElementById("schedule").addEventListener("click", () => {
@@ -105,13 +125,13 @@ function showBarChart() {
         {
           label: "Priority",
           data: priorities,
-          backgroundColor: "#f9a826", // orange
+          backgroundColor: "#f9a826",
           borderRadius: 6,
         },
         {
           label: "Cost",
           data: costs,
-          backgroundColor: "#f24e1e", // reddish
+          backgroundColor: "#f24e1e",
           borderRadius: 6,
         }
       ]
